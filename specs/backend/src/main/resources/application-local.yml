@@ -1,5 +1,7 @@
 app:
   security:
+    jwt:
+      secret: ${JWT_SECRET}
     users:
       - username: ${ADMIN_USERNAME}
         password: ${ADMIN_PASSWORD}

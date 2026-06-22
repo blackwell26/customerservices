@@ -14,6 +14,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import jakarta.annotation.PostConstruct;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -29,6 +30,7 @@ public class FileChatSessionStore implements ChatSessionStore {
     private final Path storageFile;
     private final Map<String, ChatSessionRecord> sessions = new HashMap<>();
 
+    @Autowired
     public FileChatSessionStore(
             ObjectMapper objectMapper,
             @Value("${app.chat.storage.file:}") String storageFilePath) {

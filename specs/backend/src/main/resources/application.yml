@@ -8,7 +8,6 @@ app:
   security:
     jwt:
       issuer: customer-service-backend
-      secret: change-me-change-me-change-me-32
       expiration-minutes: 60
 
 server:

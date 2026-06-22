@@ -1,12 +1,17 @@
 package com.aichatbot.customerservices.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.validation.annotation.Validated;
 
+import jakarta.validation.constraints.NotBlank;
+
+@Validated
 @ConfigurationProperties(prefix = "app.security.jwt")
 public class JwtProperties {
 
     private String issuer = "customer-service-backend";
-    private String secret = "change-me-change-me-change-me-32";
+    @NotBlank
+    private String secret;
     private long expirationMinutes = 60;
 
     public String getIssuer() {
@@ -33,4 +38,3 @@ public class JwtProperties {
         this.expirationMinutes = expirationMinutes;
     }
 }
-

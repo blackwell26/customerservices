@@ -20,3 +20,4 @@ Planned baseline for the Spring Boot service:
 
 Local and dev profiles read account names and passwords from environment variables.
 Use [.env.example](./.env.example) as the starting point for local setup.
+`JWT_SECRET` is required in local, dev, and prod profiles.

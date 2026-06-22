@@ -14,10 +14,10 @@ Derived from:
 
 ## 2. Domain and API Design
 - [ ] Define core domain models for customers, orders, products, tickets, chat sessions, knowledge documents, and AI models.
-- [ ] Align REST resources with the requirements and TDS endpoints.
+- [x] Align REST resources with the requirements and TDS endpoints.
 - [ ] Define DTOs and API contracts for authentication, order tracking, knowledge base upload, and support workflows.
 - [x] Define WebSocket message contracts for chat send/receive and streaming responses.
-- [ ] Version APIs under `/api/v1`.
+- [x] Version APIs under `/api/v1`.
 
 ## 3. Authentication and Security
 - [x] Implement JWT-based authentication for customer login.

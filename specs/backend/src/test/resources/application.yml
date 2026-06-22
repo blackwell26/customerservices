@@ -1,0 +1,5 @@
+app:
+  security:
+    jwt:
+      secret: test-secret-test-secret-test-secret-1234
+

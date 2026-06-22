@@ -13,7 +13,7 @@ public class HealthController {
 
     private final String applicationName;
 
-    public HealthController(@Value("${spring.application.name}") String applicationName) {
+    public HealthController(@Value("${spring.application.name:customer-service-backend}") String applicationName) {
         this.applicationName = applicationName;
     }
 
@@ -22,4 +22,3 @@ public class HealthController {
         return new HealthResponse("UP", applicationName, Instant.now().toString());
     }
 }
-

@@ -77,7 +77,7 @@ Derived from:
 - [ ] Add administrator controls for chatbot policies, knowledge articles, and model settings.
 
 ## 11. Data Layer Implementation
-- [ ] Create PostgreSQL schema for customers, orders, products, support tickets, knowledge documents, and analytics.
+- [x] Create PostgreSQL schema for customers, orders, products, support tickets, knowledge documents, and analytics.
 - [x] Create MongoDB collections for chat sessions and conversation logs.
 - [ ] Implement Redis session cache and RAG context cache.
 - [ ] Configure pgvector extension and embedding indexes.

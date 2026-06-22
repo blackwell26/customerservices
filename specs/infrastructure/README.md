@@ -7,3 +7,7 @@ Planned deployment and local development assets:
 - Kubernetes or OpenShift deployment manifests
 - Secrets, resource limits, and runtime configuration
 
+## Local Compose Setup
+
+- Copy `infrastructure/compose/.env.example` to `infrastructure/compose/.env`
+- Set `POSTGRES_PASSWORD` in the `.env` file before starting Compose

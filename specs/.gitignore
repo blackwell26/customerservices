@@ -19,3 +19,12 @@ yarn-error.log*
 Thumbs.db
 Desktop.ini
 
+# Local compose secrets
+infrastructure/compose/.env
+
+# Backend local secrets
+backend/.env
+backend/.env.local
+backend/.env.development.local
+backend/.env.test.local
+backend/.env.production.local

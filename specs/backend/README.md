@@ -16,3 +16,7 @@ Planned baseline for the Spring Boot service:
 - `src/test/java/`
 - `pom.xml`
 
+## Runtime Credentials
+
+Local and dev profiles read account names and passwords from environment variables.
+Use [.env.example](./.env.example) as the starting point for local setup.

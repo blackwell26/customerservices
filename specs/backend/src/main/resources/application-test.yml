@@ -6,6 +6,20 @@ spring:
       database: customer_service_chatbot_test
 
 app:
+  security:
+    users:
+      - username: admin
+        password: admin
+        roles: [ADMIN]
+      - username: agent
+        password: agent
+        roles: [AGENT]
+      - username: customer
+        password: customer
+        roles: [CUSTOMER]
+      - username: manager
+        password: manager
+        roles: [MANAGER]
   chat:
     storage:
       mode: file
@@ -13,4 +27,3 @@ app:
   websocket:
     allowed-origins:
       - "*"
-

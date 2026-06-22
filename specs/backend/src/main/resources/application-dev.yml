@@ -6,6 +6,20 @@ spring:
       database: customer_service_chatbot_dev
 
 app:
+  security:
+    users:
+      - username: ${ADMIN_USERNAME}
+        password: ${ADMIN_PASSWORD}
+        roles: [ADMIN]
+      - username: ${AGENT_USERNAME}
+        password: ${AGENT_PASSWORD}
+        roles: [AGENT]
+      - username: ${CUSTOMER_USERNAME}
+        password: ${CUSTOMER_PASSWORD}
+        roles: [CUSTOMER]
+      - username: ${MANAGER_USERNAME}
+        password: ${MANAGER_PASSWORD}
+        roles: [MANAGER]
   chat:
     storage:
       mode: mongo
@@ -13,4 +27,3 @@ app:
     allowed-origins:
       - http://localhost:4200
       - http://localhost:8080
-

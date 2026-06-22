@@ -21,7 +21,7 @@ Derived from:
 
 ## 3. Authentication and Security
 - [x] Implement JWT-based authentication for customer login.
-- [ ] Add role-based access control for customer, agent, manager, and administrator roles.
+- [x] Add role-based access control for customer, agent, manager, and administrator roles.
 - [x] Protect REST and WebSocket endpoints with authenticated session handling.
 - [ ] Add input validation and sanitization for user messages and uploaded content.
 - [ ] Add audit logging for authentication and sensitive support actions.

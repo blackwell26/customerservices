@@ -21,7 +21,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
-@EnableConfigurationProperties(JwtProperties.class)
+@EnableConfigurationProperties({JwtProperties.class, AppSecurityProperties.class})
 public class SecurityConfig {
 
     @Bean
@@ -33,6 +33,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/v1/health", "/api/v1/auth/login", "/actuator/health").permitAll()
                         .requestMatchers("/ws/**", "/app/**", "/topic/**", "/user/**").permitAll()
+                        .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/api/v1/chat/**").hasAnyRole("CUSTOMER", "AGENT", "MANAGER", "ADMIN")
+                        .requestMatchers("/api/v1/me").authenticated()
                         .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
@@ -60,11 +63,13 @@ public class SecurityConfig {
     }
 
     @Bean
-    UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
+    UserDetailsService userDetailsService(PasswordEncoder passwordEncoder, AppSecurityProperties properties) {
         return new InMemoryUserDetailsManager(
-                User.withUsername("admin")
-                        .password(passwordEncoder.encode("admin"))
-                        .roles("ADMIN")
-                        .build());
+                properties.getUsers().stream()
+                        .map(user -> User.withUsername(user.getUsername())
+                                .password(passwordEncoder.encode(user.getPassword()))
+                                .roles(user.getRoles().toArray(String[]::new))
+                                .build())
+                        .toList());
     }
 }

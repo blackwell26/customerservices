@@ -13,7 +13,7 @@ Derived from:
 - [x] Establish coding standards, linting, formatting, and pre-commit validation.
 
 ## 2. Domain and API Design
-- [ ] Define core domain models for customers, orders, products, tickets, chat sessions, knowledge documents, and AI models.
+- [x] Define core domain models for customers, orders, products, tickets, chat sessions, knowledge documents, and AI models.
 - [x] Align REST resources with the requirements and TDS endpoints.
 - [ ] Define DTOs and API contracts for authentication, order tracking, knowledge base upload, and support workflows.
 - [x] Define WebSocket message contracts for chat send/receive and streaming responses.
@@ -34,8 +34,8 @@ Derived from:
 - [ ] Track message timestamps, sender roles, and session status.
 
 ## 5. AI and RAG Pipeline
-- [ ] Implement document ingestion for PDFs and Markdown files.
-- [ ] Chunk ingested content into retrieval-ready segments.
+- [x] Implement document ingestion for PDFs and Markdown files.
+- [x] Chunk ingested content into retrieval-ready segments.
 - [ ] Generate embeddings for chunks and store them in PostgreSQL with pgvector.
 - [ ] Implement top-K semantic retrieval for user questions.
 - [ ] Build prompt assembly logic that injects retrieved context into the system prompt.
@@ -44,10 +44,10 @@ Derived from:
 - [ ] Add confidence and fallback handling for low-quality retrieval or generation.
 
 ## 6. Knowledge Base Management
-- [ ] Build knowledge base upload endpoint and validation workflow.
-- [ ] Store document metadata, chunk records, and embedding references.
-- [ ] Add support for versioning or replacement of knowledge documents.
-- [ ] Provide admin-visible status for ingestion success and failures.
+- [x] Build knowledge base upload endpoint and validation workflow.
+- [x] Store document metadata, chunk records, and embedding references.
+- [x] Add support for versioning or replacement of knowledge documents.
+- [x] Provide admin-visible status for ingestion success and failures.
 
 ## 7. Business Service Integrations
 - [ ] Integrate order tracking with the order management and shipping services.

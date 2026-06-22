@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: ankane/pgvector
+    ports:
+      - "5432:5432"
+  mongodb:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+  ollama:
+    image: ollama/ollama
+    ports:
+      - "11434:11434"
+  kafka:
+    image: confluentinc/cp-kafka:7.6.0
+    ports:
+      - "9092:9092"
+

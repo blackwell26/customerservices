@@ -1,0 +1,10 @@
+app:
+  chat:
+    storage:
+      mode: file
+      file: ${java.io.tmpdir}/customer-service-chat/chat-sessions.json
+  websocket:
+    allowed-origins:
+      - http://localhost:4200
+      - http://localhost:8080
+

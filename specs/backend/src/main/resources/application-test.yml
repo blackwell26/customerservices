@@ -1,0 +1,16 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: customer_service_chatbot_test
+
+app:
+  chat:
+    storage:
+      mode: file
+      file: ${java.io.tmpdir}/customer-service-chat-test/chat-sessions.json
+  websocket:
+    allowed-origins:
+      - "*"
+

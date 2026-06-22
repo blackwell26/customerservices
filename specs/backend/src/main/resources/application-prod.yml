@@ -1,0 +1,17 @@
+spring:
+  data:
+    mongodb:
+      host: ${MONGODB_HOST:localhost}
+      port: ${MONGODB_PORT:27017}
+      database: ${MONGODB_DATABASE:customer_service_chatbot}
+
+app:
+  chat:
+    storage:
+      mode: mongo
+  websocket:
+    allowed-origins:
+      - ${APP_ALLOWED_ORIGIN:https://customer-service.example.com}
+  security:
+    jwt:
+      secret: ${JWT_SECRET}

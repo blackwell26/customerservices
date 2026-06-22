@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: customer-service-backend
+  profiles:
+    default: local
+
+app:
+  security:
+    jwt:
+      issuer: customer-service-backend
+      secret: change-me-change-me-change-me-32
+      expiration-minutes: 60
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
